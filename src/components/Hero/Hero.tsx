@@ -9,7 +9,12 @@ type HeroProps = {
 
 export function Hero({ text }: HeroProps) {
   return (
-    <section className="hero">
+    <section
+      className="hero"
+      style={{
+        backgroundImage: `url(${import.meta.env.BASE_URL}images/hero/hero.jpg)`,
+      }}
+    >
       <div className="hero__overlay" />
 
       <div className="hero__content">

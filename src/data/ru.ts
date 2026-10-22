@@ -59,6 +59,8 @@ contacts: {
   intro:
     'Если вы хотите связаться с хором Heimatklänge, используйте указанные ниже контакты.',
   phoneLabel: 'Телефон',
+  phone: '0177 1638820',
+  email: 'david_eu@gmx.de',
   whatsapp: 'Написать в WhatsApp'
 },
 

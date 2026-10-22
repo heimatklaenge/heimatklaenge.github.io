@@ -3,6 +3,8 @@ type ContactsProps = {
     title: string
     intro: string
     phoneLabel: string
+    phone: string
+    email: string
     whatsapp: string
   }
 }
@@ -17,13 +19,13 @@ export function Contacts({ text }: ContactsProps) {
          <p>{text.intro}</p>
 
           <p>
-  <strong>{text.phoneLabel}:</strong> 0177 1638820
+  <strong>{text.phoneLabel}:</strong> {text.phone}
 </p>
 
           <p>
             <strong>E-Mail:</strong>{" "}
-            <a href="mailto:david_eu@gmx.de">
-              david_eu@gmx.de
+            <a href={`mailto:${text.email}`}>
+              {text.email}
             </a>
           </p>
 

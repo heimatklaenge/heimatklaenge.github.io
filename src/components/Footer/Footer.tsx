@@ -17,7 +17,7 @@ export function Footer({
     <footer className="footer">
       <div className="footer__container">
         <p className="footer__copyright">
-          © 2026 Heimatklänge
+          © {new Date().getFullYear()} Heimatklänge
         </p>
 
         <div className="footer__links">

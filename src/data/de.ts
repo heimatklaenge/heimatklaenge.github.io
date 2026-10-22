@@ -68,6 +68,8 @@ contacts: {
   intro:
     'Wenn Sie mit dem Chor Heimatklänge Kontakt aufnehmen möchten, nutzen Sie bitte die folgenden Kontaktdaten.',
   phoneLabel: 'Telefon',
+  phone: '0177 1638820',
+  email: 'david_eu@gmx.de',
   whatsapp: 'WhatsApp schreiben'
 },
 

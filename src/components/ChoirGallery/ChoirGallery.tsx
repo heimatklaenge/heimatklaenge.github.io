@@ -29,10 +29,22 @@ export function ChoirGallery({ title, text }: ChoirGalleryProps) {
   const [currentImage, setCurrentImage] = useState(1);
   const [transitionEnabled, setTransitionEnabled] = useState(true);
   const [isPaused, setIsPaused] = useState(false);
+  const [isMobile, setIsMobile] = useState(
+    () => window.innerWidth <= 900
+  );
 
   const realCurrentImage =
     (currentImage - 1 + images.length) % images.length;
-    const isMobile = window.innerWidth <= 900;
+
+  useEffect(() => {
+    const handleResize = () => {
+      setIsMobile(window.innerWidth <= 900);
+    };
+
+    window.addEventListener("resize", handleResize);
+
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
 
   useEffect(() => {
   const interval = window.setInterval(() => {
