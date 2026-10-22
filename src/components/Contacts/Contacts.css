@@ -12,11 +12,18 @@
   display: inline-block;
   margin-top: 20px;
   padding: 14px 28px;
+
+  color: #ffffff;
+  font-weight: 600;
+
+  background-color: #25d366;
   border-radius: 999px;
+
   text-decoration: none;
   transition: 0.3s;
 }
 
 .whatsappButton:hover {
+  background-color: #1ebe5a;
   transform: translateY(-2px);
 }

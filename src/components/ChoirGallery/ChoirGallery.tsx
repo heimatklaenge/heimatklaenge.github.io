@@ -67,8 +67,9 @@ export function ChoirGallery({ title, text }: ChoirGalleryProps) {
     setCurrentImage((current) => current + 1);
   };
 
-  const handleTransitionEnd = () => {
-    // Доехали до копии первой фотографии
+  // Доехали до одной из копий (клонов) на краю ленты — беззвучно
+  // прыгаем на настоящий слайд, чтобы петля выглядела бесконечной.
+  const resetLoopBoundary = () => {
     if (currentImage === images.length + 1) {
       setTransitionEnabled(false);
       setCurrentImage(1);
@@ -80,7 +81,6 @@ export function ChoirGallery({ title, text }: ChoirGalleryProps) {
       });
     }
 
-    // Доехали до копии последней фотографии
     if (currentImage === 0) {
       setTransitionEnabled(false);
       setCurrentImage(images.length);
@@ -92,6 +92,25 @@ export function ChoirGallery({ title, text }: ChoirGalleryProps) {
       });
     }
   };
+
+  const handleTransitionEnd = () => {
+    resetLoopBoundary();
+  };
+
+  // Страховка: если `transitionend` не сработает (например, вкладка
+  // была в фоне и браузер приостановил анимации/отрисовку), сбрасываем
+  // позицию каруселей сами — иначе currentImage будет бесконечно расти
+  // с каждым тиком интервала, и карусель "улетит" в пустоту.
+  useEffect(() => {
+    if (currentImage !== images.length + 1 && currentImage !== 0) {
+      return;
+    }
+
+    const timeout = window.setTimeout(resetLoopBoundary, 850);
+
+    return () => window.clearTimeout(timeout);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [currentImage]);
 
   const selectImage = (index: number) => {
     setTransitionEnabled(true);

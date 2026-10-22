@@ -32,6 +32,7 @@ export function Header({
   setPage,
 }: HeaderProps) {
   const [isScrolled, setIsScrolled] = useState(false)
+  const [isMenuOpen, setIsMenuOpen] = useState(false)
 
   useEffect(() => {
     const handleScroll = () => {
@@ -45,12 +46,17 @@ export function Header({
     }
   }, [])
 
+  const goToSection = () => {
+    setPage('home')
+    setIsMenuOpen(false)
+  }
+
   return (
     <header className={`header ${isScrolled ? 'header--scrolled' : ''}`}>
       <a
   className="header__logo"
   href="#"
-  onClick={() => setPage('home')}
+  onClick={() => goToSection()}
 >
   <span className="header__logo-title">
     {text.title}
@@ -61,43 +67,44 @@ export function Header({
   </span>
 </a>
 
-      <nav className="header__nav">
+      <nav className={`header__nav ${isMenuOpen ? 'header__nav--open' : ''}`}>
         <a
   href="#about"
-  onClick={() => setPage('home')}
+  onClick={() => goToSection()}
 >
   {text.nav.about}
 </a>
         <a
   href="#gallery"
-  onClick={() => setPage('home')}
+  onClick={() => goToSection()}
 >
   {text.nav.gallery}
 </a>
 
 <a
   href="#youtube"
-  onClick={() => setPage('home')}
+  onClick={() => goToSection()}
 >
   {text.nav.video}
 </a>
 
 <a
   href="#leadership"
-  onClick={() => setPage('home')}
+  onClick={() => goToSection()}
 >
   {text.nav.leadership}
 </a>
 
 <a
   href="#contacts"
-  onClick={() => setPage('home')}
+  onClick={() => goToSection()}
 >
   {text.nav.contacts}
 </a>
       </nav>
 
-      <div className="header__languages">
+      <div className="header__right">
+        <div className="header__languages">
   <button
     className={`header__language ${
       language === 'ru' ? 'header__language--active' : ''
@@ -116,6 +123,19 @@ export function Header({
     DE
   </button>
 </div>
+
+        <button
+          type="button"
+          className={`header__burger ${isMenuOpen ? 'header__burger--open' : ''}`}
+          aria-label={isMenuOpen ? 'Закрыть меню' : 'Открыть меню'}
+          aria-expanded={isMenuOpen}
+          onClick={() => setIsMenuOpen((open) => !open)}
+        >
+          <span />
+          <span />
+          <span />
+        </button>
+      </div>
     </header>
   )
 }

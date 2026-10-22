@@ -1,3 +1,5 @@
+import './Contacts.css'
+
 type ContactsProps = {
   text: {
     title: string
