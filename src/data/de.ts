@@ -1,5 +1,9 @@
-export const de = {
+import type { Translations } from './ru'
+
+export const de: Translations = {
   header: {
+  menuOpen: 'Menü öffnen',
+  menuClose: 'Menü schließen',
   title: "Heimatklänge",
   subtitle: "Chor der Russlanddeutschen",
 
@@ -54,13 +58,19 @@ leadership: {
     role: 'VERANTWORTLICHER VERTRETER',
     text: 'David Eurich, verantwortlicher Vertreter und Mitbegründer des Chores Heimatklänge, wurde in Omsk geboren. Seit 1981 lebt und arbeitet er in Köln. Mehrere Jahre war er zudem in Bayern tätig. Seine letzte Position war über 20 Jahre lang die Leitung einer Verwaltungsabteilung in einem Einzelhandelsunternehmen.',
     phone: '0177 1638820',
-    email: 'david_eu@gmx.de'
+    email: 'eurichdavid1@gmail.com'
   }
 },
 
 gallery: {
   title: "Unser Chor",
   text: "Gemeinsam pflegen wir unsere Traditionen, treten bei Konzerten auf und genießen die Freude am gemeinsamen Singen.",
+  labels: {
+      prev: 'Vorheriges Foto',
+      next: 'Nächstes Foto',
+      photo: 'Chorfoto',
+      show: 'Foto anzeigen',
+    },
 },
 
 contacts: {
@@ -69,9 +79,16 @@ contacts: {
     'Wenn Sie mit dem Chor Heimatklänge Kontakt aufnehmen möchten, nutzen Sie bitte die folgenden Kontaktdaten.',
   phoneLabel: 'Telefon',
   phone: '0177 1638820',
-  email: 'david_eu@gmx.de',
+  email: 'eurichdavid1@gmail.com',
   whatsapp: 'WhatsApp schreiben'
 },
+
+  video: {
+    title: 'Heimatklänge – Video',
+    play: 'Video abspielen',
+    notice:
+      'Beim Klick wird das Video von YouTube (Google) geladen. Dabei wird Ihre IP-Adresse an Google übertragen.',
+  },
 
   privacy: {
     title: 'Datenschutz',

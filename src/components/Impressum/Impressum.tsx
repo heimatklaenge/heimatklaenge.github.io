@@ -23,7 +23,7 @@ export function Impressum({ title }: ImpressumProps) {
         <p>
           Telefon: +49 177 1638820
           <br />
-          E-Mail: info@chor-heimatklaenge-koeln.de
+          E-Mail: eurichdavid1@gmail.com
         </p>
 
         <h2>Vertreten durch</h2>

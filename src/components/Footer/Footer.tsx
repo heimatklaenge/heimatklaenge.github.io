@@ -3,16 +3,9 @@ import './Footer.css'
 type FooterProps = {
   impressum: string
   privacy: string
-  setPage: React.Dispatch<
-    React.SetStateAction<'home' | 'impressum' | 'privacy'>
-  >
 }
 
-export function Footer({
-  impressum,
-  privacy,
-  setPage,
-}: FooterProps) {
+export function Footer({ impressum, privacy }: FooterProps) {
   return (
     <footer className="footer">
       <div className="footer__container">
@@ -21,21 +14,15 @@ export function Footer({
         </p>
 
         <div className="footer__links">
-          <button
-  className="footer__link"
-  onClick={() => setPage('impressum')}
->
-  {impressum}
-</button>
+          <a className="footer__link" href="#/impressum">
+            {impressum}
+          </a>
 
           <span>|</span>
 
-          <button
-  className="footer__link"
-  onClick={() => setPage('privacy')}
->
-  {privacy}
-</button>
+          <a className="footer__link" href="#/privacy">
+            {privacy}
+          </a>
         </div>
       </div>
     </footer>

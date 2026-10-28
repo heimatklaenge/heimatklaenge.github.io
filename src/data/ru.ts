@@ -1,5 +1,7 @@
 export const ru = {
   header: {
+  menuOpen: 'Открыть меню',
+  menuClose: 'Закрыть меню',
   title: "Heimatklänge",
   subtitle: "Chor der Russlanddeutschen",
   
@@ -45,13 +47,19 @@ export const ru = {
     role: 'ОТВЕТСТВЕННЫЙ ПРЕДСТАВИТЕЛЬ',
     text: 'Наш ответственный представитель и один из основателей хора Heimatklänge David Eurich родился в Омске и живёт в Кёльне с 1981 года. Несколько лет он также работал в Баварии. Последняя должность — более 20 лет руководитель административного отдела в крупной торговой компании.',
     phone: '0177 1638820',
-    email: 'david_eu@gmx.de'
+    email: 'eurichdavid1@gmail.com'
   }
 },
 
   gallery: {
   title: "Наш коллектив",
   text: "Вместе мы сохраняем традиции, выступаем на концертах, участвуем в праздниках и просто наслаждаемся совместным пением.",
+  labels: {
+      prev: 'Предыдущая фотография',
+      next: 'Следующая фотография',
+      photo: 'Фото хора',
+      show: 'Показать фотографию',
+    },
 },
 
 contacts: {
@@ -60,9 +68,16 @@ contacts: {
     'Если вы хотите связаться с хором Heimatklänge, используйте указанные ниже контакты.',
   phoneLabel: 'Телефон',
   phone: '0177 1638820',
-  email: 'david_eu@gmx.de',
+  email: 'eurichdavid1@gmail.com',
   whatsapp: 'Написать в WhatsApp'
 },
+
+  video: {
+    title: 'Heimatklänge – Видео',
+    play: 'Смотреть видео',
+    notice:
+      'При нажатии видео загружается с YouTube (Google). При этом ваш IP-адрес передаётся Google.',
+  },
 
   privacy: {
     title: 'Политика конфиденциальности',
@@ -73,3 +88,5 @@ contacts: {
   },
   
 }
+
+export type Translations = typeof ru

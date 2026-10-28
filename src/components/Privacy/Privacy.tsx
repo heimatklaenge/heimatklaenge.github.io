@@ -30,7 +30,7 @@ export function Privacy({ title }: PrivacyProps) {
 
         <p>
           E-Mail:
-          info@chor-heimatklaenge-koeln.de
+          eurichdavid1@gmail.com
           <br />
           Telefon:
           +49 177 1638820

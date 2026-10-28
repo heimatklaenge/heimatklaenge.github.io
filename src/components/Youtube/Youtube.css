@@ -27,3 +27,34 @@ h2 {
   height: 100%;
   border: 0;
 }
+
+.videoConsent {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  padding: 24px;
+  text-align: center;
+  background: #241c17;
+}
+
+.videoConsent__button {
+  padding: 14px 28px;
+  font: inherit;
+  font-weight: 600;
+  color: #17120f;
+  cursor: pointer;
+  background: #f8f4ec;
+  border: 0;
+  border-radius: 999px;
+}
+
+.videoConsent__notice {
+  max-width: 480px;
+  margin: 0;
+  font-size: 14px;
+  opacity: 0.7;
+}

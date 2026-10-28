@@ -17,9 +17,15 @@ const images = [
 type ChoirGalleryProps = {
   title: string;
   text: string;
+  labels: {
+    prev: string;
+    next: string;
+    photo: string;
+    show: string;
+  };
 };
 
-export function ChoirGallery({ title, text }: ChoirGalleryProps) {
+export function ChoirGallery({ title, text, labels }: ChoirGalleryProps) {
   const carouselImages = [
     images[images.length - 1],
     ...images,
@@ -133,7 +139,7 @@ export function ChoirGallery({ title, text }: ChoirGalleryProps) {
             type="button"
             className="choir-gallery__button choir-gallery__button--left"
             onClick={showPreviousImage}
-            aria-label="Предыдущая фотография"
+            aria-label={labels.prev}
           >
             ‹
           </button>
@@ -164,10 +170,12 @@ export function ChoirGallery({ title, text }: ChoirGalleryProps) {
                 >
                   <img
                     src={image}
-                    alt={`Фото хора ${
+                    alt={`${labels.photo} ${
                       ((index - 1 + images.length) % images.length) + 1
                     }`}
                     className="choir-gallery__image"
+                    loading="lazy"
+                    decoding="async"
                   />
                 </div>
               ))}
@@ -178,7 +186,7 @@ export function ChoirGallery({ title, text }: ChoirGalleryProps) {
             type="button"
             className="choir-gallery__button choir-gallery__button--right"
             onClick={showNextImage}
-            aria-label="Следующая фотография"
+            aria-label={labels.next}
           >
             ›
           </button>
@@ -195,7 +203,7 @@ export function ChoirGallery({ title, text }: ChoirGalleryProps) {
                   : ""
               }`}
               onClick={() => selectImage(index)}
-              aria-label={`Показать фотографию ${index + 1}`}
+              aria-label={`${labels.show} ${index + 1}`}
             />
           ))}
         </div>

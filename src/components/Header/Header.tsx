@@ -1,8 +1,11 @@
 import { useEffect, useState } from 'react'
+import type { Language } from '../../data'
 import './Header.css'
 
 type HeaderProps = {
   text: {
+    menuOpen: string
+    menuClose: string
     title: string
     subtitle: string
 
@@ -16,21 +19,11 @@ type HeaderProps = {
       impressum: string
     }
   }
-  language: 'ru' | 'de'
-setLanguage: React.Dispatch<React.SetStateAction<'ru' | 'de'>>
-
-setPage: React.Dispatch<
-  React.SetStateAction<'home' | 'impressum' | 'privacy'>
->
-
+  language: Language
+  setLanguage: (language: Language) => void
 }
 
-export function Header({
-  text,
-  language,
-  setLanguage,
-  setPage,
-}: HeaderProps) {
+export function Header({ text, language, setLanguage }: HeaderProps) {
   const [isScrolled, setIsScrolled] = useState(false)
   const [isMenuOpen, setIsMenuOpen] = useState(false)
 
@@ -46,17 +39,14 @@ export function Header({
     }
   }, [])
 
-  const goToSection = () => {
-    setPage('home')
-    setIsMenuOpen(false)
-  }
+  const closeMenu = () => setIsMenuOpen(false)
 
   return (
     <header className={`header ${isScrolled ? 'header--scrolled' : ''}`}>
       <a
   className="header__logo"
   href="#"
-  onClick={() => goToSection()}
+  onClick={closeMenu}
 >
   <span className="header__logo-title">
     {text.title}
@@ -70,34 +60,34 @@ export function Header({
       <nav className={`header__nav ${isMenuOpen ? 'header__nav--open' : ''}`}>
         <a
   href="#about"
-  onClick={() => goToSection()}
+  onClick={closeMenu}
 >
   {text.nav.about}
 </a>
         <a
   href="#gallery"
-  onClick={() => goToSection()}
+  onClick={closeMenu}
 >
   {text.nav.gallery}
 </a>
 
 <a
   href="#youtube"
-  onClick={() => goToSection()}
+  onClick={closeMenu}
 >
   {text.nav.video}
 </a>
 
 <a
   href="#leadership"
-  onClick={() => goToSection()}
+  onClick={closeMenu}
 >
   {text.nav.leadership}
 </a>
 
 <a
   href="#contacts"
-  onClick={() => goToSection()}
+  onClick={closeMenu}
 >
   {text.nav.contacts}
 </a>
@@ -106,6 +96,7 @@ export function Header({
       <div className="header__right">
         <div className="header__languages">
   <button
+    type="button"
     className={`header__language ${
       language === 'ru' ? 'header__language--active' : ''
     }`}
@@ -115,6 +106,7 @@ export function Header({
   </button>
 
   <button
+    type="button"
     className={`header__language ${
       language === 'de' ? 'header__language--active' : ''
     }`}
@@ -127,7 +119,7 @@ export function Header({
         <button
           type="button"
           className={`header__burger ${isMenuOpen ? 'header__burger--open' : ''}`}
-          aria-label={isMenuOpen ? 'Закрыть меню' : 'Открыть меню'}
+          aria-label={isMenuOpen ? text.menuClose : text.menuOpen}
           aria-expanded={isMenuOpen}
           onClick={() => setIsMenuOpen((open) => !open)}
         >
