@@ -17,9 +17,37 @@
       content="Смешанный хор в Кёльне, основан в 1996 году. Gemischter Chor in Köln, gegründet 1996."
     />
     <meta name="theme-color" content="#17120f" />
+    <style>
+      /* Запасной экран: виден, только если приложение не запустилось
+         (React заменяет содержимое #root). Появляется с задержкой,
+         чтобы не мелькать при обычной загрузке. */
+      body { margin: 0; background: #17120f; color: #f8f4ec; font-family: system-ui, sans-serif; }
+      .fb { min-height: 100vh; display: flex; flex-direction: column; align-items: center; justify-content: center; padding: 24px; text-align: center; opacity: 0; animation: fb-show .4s ease 3s forwards; }
+      .fb-art { width: min(320px, 80vw); margin-bottom: 16px; }
+      .fb h1 { margin: 8px 0 0; font-size: 24px; font-weight: 600; }
+      .fb p { max-width: 460px; margin: 8px 0 0; opacity: .75; }
+      .fb h1[lang="de"] { margin-top: 24px; font-size: 18px; }
+      .fb-hint a { color: #c9a46a; text-decoration: underline; }
+      @keyframes fb-show { to { opacity: 1; } }
+    </style>
   </head>
   <body>
-    <div id="root"></div>
+    <div id="root">
+      <div class="fb" role="alert">
+        <svg class="fb-art" viewBox="0 0 320 140" role="img" aria-label="404">
+          <text x="160" y="104" text-anchor="middle" font-size="120" font-weight="700" fill="none" stroke="#c9a46a" stroke-width="2" font-family="Georgia, serif">404</text>
+          <path d="M40 126h240" stroke="#c9a46a" stroke-width="1" opacity=".5"/>
+        </svg>
+        <h1>Сайт временно недоступен</h1>
+        <p>Мы уже знаем о проблеме и работаем над ней. Пожалуйста, зайдите позже.</p>
+        <h1 lang="de">Die Seite ist vorübergehend nicht erreichbar</h1>
+        <p lang="de">Wir kümmern uns bereits darum. Bitte versuchen Sie es später erneut.</p>
+        <p class="fb-hint"><a href="">Обновить / Neu laden</a></p>
+      </div>
+    </div>
+    <noscript>
+      <style>.fb{animation:none!important;opacity:1!important}</style>
+    </noscript>
     <script type="module" src="/src/main.tsx"></script>
   </body>
 </html>

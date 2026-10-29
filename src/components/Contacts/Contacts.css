@@ -27,3 +27,44 @@
   background-color: #1ebe5a;
   transform: translateY(-2px);
 }
+
+.contactsCard__email {
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.contactsCard__email:hover {
+  opacity: 0.75;
+}
+
+.contactsCard__actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  justify-content: center;
+  margin-top: 8px;
+}
+
+.emailButton {
+  padding: 14px 28px;
+
+  font: inherit;
+  font-weight: 600;
+  color: #17120f;
+
+  cursor: pointer;
+  background-color: #f8f4ec;
+  border: 1px solid #f8f4ec;
+  border-radius: 999px;
+
+  transition: 0.3s;
+}
+
+.emailButton:hover {
+  transform: translateY(-2px);
+}
+
+.emailButton--ghost {
+  color: #f8f4ec;
+  background-color: transparent;
+}

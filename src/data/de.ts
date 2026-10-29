@@ -80,7 +80,10 @@ contacts: {
   phoneLabel: 'Telefon',
   phone: '0177 1638820',
   email: 'eurichdavid1@gmail.com',
-  whatsapp: 'WhatsApp schreiben'
+  whatsapp: 'WhatsApp schreiben',
+  writeEmail: 'E-Mail schreiben',
+  copyEmail: 'Adresse kopieren',
+  copied: 'Kopiert ✓'
 },
 
   video: {

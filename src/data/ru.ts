@@ -69,7 +69,10 @@ contacts: {
   phoneLabel: 'Телефон',
   phone: '0177 1638820',
   email: 'eurichdavid1@gmail.com',
-  whatsapp: 'Написать в WhatsApp'
+  whatsapp: 'Написать в WhatsApp',
+  writeEmail: 'Написать письмо',
+  copyEmail: 'Копировать адрес',
+  copied: 'Скопировано ✓'
 },
 
   video: {
