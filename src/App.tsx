@@ -90,6 +90,7 @@ function App() {
         {page === 'home' && (
           <>
             <Hero text={t.hero} />
+            <Events events={events} language={language} text={t.events} />
             <About text={t.about} />
             <Leadership text={t.leadership} />
             <ChoirGallery
@@ -98,7 +99,6 @@ function App() {
               labels={t.gallery.labels}
             />
             <Youtube title={t.header.nav.video} labels={t.video} />
-            <Events events={events} language={language} text={t.events} />
             <Contacts text={t.contacts} />
           </>
         )}
