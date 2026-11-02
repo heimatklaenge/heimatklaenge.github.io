@@ -13,6 +13,7 @@ export const de: Translations = {
       leadership: 'Chorleitung',
       gallery: 'Galerie',
       video: 'Video',
+      events: 'Veranstaltungen',
       contacts: 'Kontakt',
          privacy: 'Datenschutz',
       impressum: 'Impressum',
@@ -91,6 +92,14 @@ contacts: {
     play: 'Video abspielen',
     notice:
       'Beim Klick wird das Video von YouTube (Google) geladen. Dabei wird Ihre IP-Adresse an Google übertragen.',
+  },
+
+  events: {
+    title: 'Veranstaltungen',
+    date: 'Datum',
+    time: 'Uhrzeit',
+    place: 'Ort',
+    openPoster: 'Plakat öffnen',
   },
 
   privacy: {

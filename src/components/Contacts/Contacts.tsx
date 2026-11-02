@@ -32,7 +32,7 @@ export function Contacts({ text }: ContactsProps) {
   }
 
   return (
-    <section id="contacts" className="section">
+    <section id="contacts" className="section contacts">
       <div className="container">
         <h2>{text.title}</h2>
 

@@ -9,7 +9,9 @@ import { Contacts } from './components/Contacts/Contacts'
 import { Footer } from './components/Footer/Footer'
 import { Impressum } from './components/Impressum/Impressum'
 import { Privacy } from './components/Privacy/Privacy'
+import { Events } from './components/Events/Events'
 import { translations } from './data'
+import { getActiveEvents } from './data/events'
 import type { Language, Page } from './data'
 
 const LANGUAGE_KEY = 'language'
@@ -35,7 +37,9 @@ function getPageFromHash(): Page {
 function App() {
   const [language, setLanguageState] = useState<Language>(getInitialLanguage)
   const [page, setPage] = useState<Page>(getPageFromHash)
+  const [now, setNow] = useState(() => new Date())
   const t = translations[language]
+  const events = getActiveEvents(now)
 
   const setLanguage = useCallback((next: Language) => {
     setLanguageState(next)
@@ -44,6 +48,13 @@ function App() {
     } catch {
       // игнорируем
     }
+  }, [])
+
+  // Раз в минуту пересчитываем время, чтобы афиша скрывалась сама,
+  // даже если страница открыта давно.
+  useEffect(() => {
+    const timer = window.setInterval(() => setNow(new Date()), 60_000)
+    return () => window.clearInterval(timer)
   }, [])
 
   useEffect(() => {
@@ -68,7 +79,12 @@ function App() {
 
   return (
     <>
-      <Header text={t.header} language={language} setLanguage={setLanguage} />
+      <Header
+        text={t.header}
+        language={language}
+        setLanguage={setLanguage}
+        showEvents={events.length > 0}
+      />
 
       <main>
         {page === 'home' && (
@@ -82,6 +98,7 @@ function App() {
               labels={t.gallery.labels}
             />
             <Youtube title={t.header.nav.video} labels={t.video} />
+            <Events events={events} language={language} text={t.events} />
             <Contacts text={t.contacts} />
           </>
         )}

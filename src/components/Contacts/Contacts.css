@@ -68,3 +68,11 @@
   color: #f8f4ec;
   background-color: transparent;
 }
+
+
+/* Цвет задан явно, а не через :nth-child, потому что секция «Афиша»
+   может появляться и исчезать перед контактами. */
+.section.contacts {
+  color: #f8f4ec;
+  background: #17120f;
+}

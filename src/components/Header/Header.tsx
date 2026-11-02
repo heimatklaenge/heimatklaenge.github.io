@@ -14,6 +14,7 @@ type HeaderProps = {
       leadership: string
       gallery: string
       video: string
+      events: string
       contacts: string
       privacy: string
       impressum: string
@@ -21,9 +22,10 @@ type HeaderProps = {
   }
   language: Language
   setLanguage: (language: Language) => void
+  showEvents: boolean
 }
 
-export function Header({ text, language, setLanguage }: HeaderProps) {
+export function Header({ text, language, setLanguage, showEvents }: HeaderProps) {
   const [isScrolled, setIsScrolled] = useState(false)
   const [isMenuOpen, setIsMenuOpen] = useState(false)
 
@@ -77,6 +79,12 @@ export function Header({ text, language, setLanguage }: HeaderProps) {
 >
   {text.nav.video}
 </a>
+
+{showEvents && (
+  <a href="#events" onClick={closeMenu}>
+    {text.nav.events}
+  </a>
+)}
 
 <a
   href="#leadership"

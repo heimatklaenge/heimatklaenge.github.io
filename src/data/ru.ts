@@ -10,6 +10,7 @@ export const ru = {
       leadership: 'Руководство',
       gallery: 'Наш коллектив',
       video: 'Видео',
+      events: 'Афиша',
       contacts: 'Контакты',
       privacy: 'Политика конфиденциальности',
       impressum: 'Импрессум',
@@ -80,6 +81,14 @@ contacts: {
     play: 'Смотреть видео',
     notice:
       'При нажатии видео загружается с YouTube (Google). При этом ваш IP-адрес передаётся Google.',
+  },
+
+  events: {
+    title: 'Афиша',
+    date: 'Дата',
+    time: 'Время',
+    place: 'Место',
+    openPoster: 'Открыть афишу',
   },
 
   privacy: {
