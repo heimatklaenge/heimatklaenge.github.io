@@ -18,7 +18,7 @@ export function Youtube({ title, labels }: YoutubeProps) {
   const [isLoaded, setIsLoaded] = useState(false)
 
   return (
-    <section id="youtube" className="section">
+    <section id="youtube" className="section youtube">
       <div className="container">
         <h2>{title}</h2>
 

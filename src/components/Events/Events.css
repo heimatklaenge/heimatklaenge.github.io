@@ -1,7 +1,7 @@
 .events {
   padding: 7rem 6vw;
-  background: #211914;
-  color: #f8f4ec;
+  background: #f7f1e8;
+  color: #17120f;
 }
 
 .events__container {
@@ -25,9 +25,9 @@
   align-items: center;
   padding: 2rem;
   margin-bottom: 3rem;
-  background: rgba(255, 255, 255, 0.04);
-  border: 1px solid rgba(255, 255, 255, 0.1);
+  background: #fffdf8;
   border-radius: 20px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
 }
 
 .event-card:last-child {
@@ -38,7 +38,7 @@
   flex: 0 0 min(420px, 40%);
   overflow: hidden;
   border-radius: 12px;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.35);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.18);
   transition: transform 0.3s ease;
 }
 
@@ -83,7 +83,7 @@
   font-weight: 500;
   letter-spacing: 0.08em;
   text-transform: uppercase;
-  color: #c9a46a;
+  color: #8d7b65;
 }
 
 .event-card__details dd {
@@ -96,7 +96,7 @@
   font-family: "Cormorant Garamond", serif;
   font-size: 1.5rem;
   font-style: italic;
-  color: #c9a46a;
+  color: #8d7b65;
 }
 
 @media (max-width: 900px) {
